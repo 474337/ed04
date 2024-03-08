@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class Agenda {
+public class Agenda implements IntAgenda {
     /**
      * List es una estructura de datos que permite guardar o eliminar elementos en un orden
      * especifico, sin definir un espacio fijo (tiene un tamaño dinámico). Necesitamos importar
@@ -25,6 +25,7 @@ public class Agenda {
       * @param name en la llamada a este método se le pasa el nombre del {@link Contacto} a crear
      * @param phone y el teléfono del contacto
      */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false; // Inicialmente decimos que el contacto no existe
         for (Contacto c : contacts) {  //"c" es un objeto de la clase Contacto, con ella luego
@@ -53,6 +54,7 @@ public class Agenda {
      * Método para eliminar elementos (contactos) de la agenda
      * @param name recive el nombre del contacto a eliminar
      */
+    @Override
     public void removeContact(String name) {
         Iterator<Contacto> it = contacts.iterator(); //"it" va a ser un "iterator" que lo que hace es
                                                     // permitirnos recorrer la lista "Contacto"
@@ -73,6 +75,7 @@ public class Agenda {
      * @param oldPhone  parámetro que debe contener el número antiguo del contacto
      * @param newPhone aquí se indica el nuevo número de teléfono que le vamos a poner
      */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Contacto c : contacts) {   //"c" e
             if (c.getName().equalsIgnoreCase(name)) {
@@ -95,6 +98,7 @@ public class Agenda {
      * {@link Contacto} referencia o hipervínculo a la clase Contacto
      * @return el método devuelve un contacto
      */
+    @Override
     public List<Contacto> getContacts() {
         return this.contacts;
     }

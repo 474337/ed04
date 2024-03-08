@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-class Contacto {
+class Persona {
     private String name;
     private List<String> phones;
 
@@ -12,7 +12,7 @@ class Contacto {
      * @param name nombre del contacto
      * @param phone teléfono del contacto
      */
-    public Contacto(String name, String phone) {
+    public Persona(String name, String phone) {
         this.name = name;
         this.phones = new ArrayList<>();
         this.phones.add(phone);
@@ -32,5 +32,13 @@ class Contacto {
      */
     public List<String> getPhones() {
         return this.phones;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
     }
 }
